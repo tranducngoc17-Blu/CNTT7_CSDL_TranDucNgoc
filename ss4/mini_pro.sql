@@ -87,3 +87,30 @@ INSERT INTO score (student_id, course_id, middle_score, final_score) VALUES
 (2,1,7,7),
 (3,2,6,8);
 
+UPDATE student
+SET email = 'newemail@gmail.com'
+WHERE student_id = 1;
+
+UPDATE course
+SET description = 'Khoa hoc cap nhat moi'
+WHERE course_id = 1;
+
+UPDATE score
+SET final_score = 10
+WHERE student_id = 1 AND course_id = 1;
+
+DELETE FROM enrollment
+WHERE student_id = 5 AND course_id = 5;
+
+DELETE FROM score
+WHERE student_id = 5 AND course_id = 5;
+
+select * from student;
+
+select * from teacher;
+
+select * from course;
+
+select * from enrollment;
+
+select * from score;
