@@ -65,3 +65,19 @@ select * from authors;
 select * from books;
 select * from customers;
 
+SET SQL_SAFE_UPDATES = 0;
+
+select * from books
+where category = 'Trinh tham' and price < 100000;
+
+select * from customers
+where  email like '%@gmail.com';
+
+select * from books
+order by price desc
+limit 3;
+
+update books
+set price = price * 0.9
+where publish_year < 2020
+and book_id > 0;
