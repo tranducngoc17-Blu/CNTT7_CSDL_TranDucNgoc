@@ -89,7 +89,14 @@ select * from Reader;
 select * from Book
 where NamPhatHanh between 2015 and 2023;
 
-select name from Reader
+select name,
+       (select card_id
+        from Borrow_Card
+        where Borrow_Card.reader_id = Reader.reader_id
+          and month(borrow_date) = 4
+          and year(borrow_date) = 2026
+       ) as card_id
+from Reader
 where reader_id in (
     select reader_id
     from Borrow_Card
